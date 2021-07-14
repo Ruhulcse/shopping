@@ -38,7 +38,7 @@ const Cart = () => {
             <div></div>
             <div style={{ marginLeft: 5 }}>
               {formatCurrency(
-                cartItems.reduce((amount, item) => item.price + amount, 0),
+                cartItems.reduce((amount, item) => parseInt(item.price) + amount, 0),
                 opts
               )}
             </div>
