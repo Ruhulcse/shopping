@@ -7,7 +7,8 @@ import CartItem from "./CartItem";
 const Cart = () => {
   const { showCart, cartItems, showHideCart } = useContext(CartContext);
   let opts = { format: "%s%v", symbol: "€" };
-
+  let data = JSON.parse(localStorage.getItem('userData'));
+  let user = localStorage.getItem("user");
   return (
     <>
       {showCart && (
@@ -21,6 +22,7 @@ const Cart = () => {
             ></i>
           </div>
           <div className='cart__innerWrapper'>
+            {user&&<p>Hi {data.FirstName} here is your order list </p>}
             {cartItems.length === 0 ? (
               <h4>Cart is Empty</h4>
             ) : (

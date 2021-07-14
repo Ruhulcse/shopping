@@ -1,14 +1,18 @@
-import Cart from "./Components/Cart";
-import Nav from "./Components/Nav";
-import HomeScreen from "./screens/HomeScreen";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Login from "./screens/Login";
+import MainScreen from "./screens/MainScreen";
+import Registration from "./screens/Registration";
+
 
 
 function App() {
   return (
     <div className="App">
-       <Nav/>
-       <Cart/>
-       <HomeScreen/>
+      <Router>
+        <Route exact path="/" component={MainScreen} />
+        <Route exact path="/registration" component={Registration}/>
+        <Route exact path="/login" component={Login}/>
+      </Router>
     </div>
   );
 }
