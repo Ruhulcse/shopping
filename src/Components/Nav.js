@@ -1,17 +1,18 @@
 import "./Nav.css";
-import { useContext } from "react";
+import { useContext} from "react";
 import CartContext from "../context/cart/CartContext";
 
 const Nav = () => {
-  const { cartItems, showHideCart } = useContext(CartContext);
+  const { cartItems, showHideCart, showChild, child } = useContext(CartContext);
+ 
   return (
     <nav>
-      <div className='nav__left'>Store</div>
+      <div className='nav__left'>
+      {child?<button onClick={showChild} className="button">child</button>
+      :<button onClick={showChild} className="button">parent</button>}
+      </div>
       <div className='nav__middle'>
-        {/* <div className='input__wrapper'>
-          <input type='text' />
-          <i className='fas fa-search' />
-        </div> */}
+    
       </div>
       <div className='nav__right'>
         <div className='cart__icon'>

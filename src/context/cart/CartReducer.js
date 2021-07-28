@@ -1,8 +1,14 @@
 
-import { SHOW_HIDE_CART, ADD_TO_CART, REMOVE_ITEM } from "../Types";
+import { SHOW_HIDE_CART, ADD_TO_CART, REMOVE_ITEM, SHOW_CHILD } from "../Types";
 
 const CartReducer = (state, action) => {
   switch (action.type) {
+    case SHOW_CHILD: {
+      return {
+        ...state,
+        child: !state.child,
+      }
+    }
     case SHOW_HIDE_CART: {
       return {
         ...state,
