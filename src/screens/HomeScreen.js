@@ -1,5 +1,4 @@
 import React,{useEffect, useState} from 'react'
-import {URL} from "../utils/config"
 import axios from 'axios'
 import "./HomScreen.css";
 import ProductCard from "../Components/ProductCard";
@@ -9,9 +8,8 @@ const HomeScreen = () => {
   useEffect(() => {
     try {
       async function fetchUserData() {
-        const {data} = await axios.get(`${URL}products`);
+        const {data} = await axios.get("https://fakestoreapi.com/products");
         setProducts(data);
-        console.log(data);
       }
       fetchUserData();
     } catch (error) {
@@ -21,7 +19,7 @@ const HomeScreen = () => {
   return (
     <div className='products__wrapper'>
       {products.map((product) => (
-        <ProductCard key={product._id} product={product} />
+        <ProductCard key={product.id} product={product} />
       ))}
     </div>
   );
