@@ -12,7 +12,10 @@ const Nav = () => {
       :<button onClick={showChild} className="button">parent</button>}
       </div>
       <div className='nav__middle'>
-    
+      <div className='input__wrapper'>
+          <input type='text' />
+          <i className='fas fa-search' />
+        </div>
       </div>
       <div className='nav__right'>
         <div className='cart__icon'>
